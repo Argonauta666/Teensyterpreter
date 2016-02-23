@@ -1,4 +1,5 @@
 RickTeensy
 ===============
 rickrolls FTW
-check the wiki
+WORKS ON ALL TEENSY'S
+tested on teensy lc
