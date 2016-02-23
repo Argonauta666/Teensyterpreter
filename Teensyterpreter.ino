@@ -92,8 +92,8 @@ void spawnReverseTCP()                                             // Start the 
     delay(1000);
     
     returnCode(1, 100);                                            // Run is ready.
-    
-    Keyboard.print("iexplore.exe -k rhttps://www.youtube.com/watch?v=oHg5SJYRHA0");  // Start CMD small with dark text.
+    // this can be changed to anylink
+    Keyboard.print("iexplore.exe -k https://www.youtube.com/watch?v=oHg5SJYRHA0"); 
     Keyboard.set_key1(KEY_ENTER);
     Keyboard.send_now();
     clearKeys();                                      // All done.
