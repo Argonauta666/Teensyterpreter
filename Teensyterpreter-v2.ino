@@ -1,6 +1,6 @@
 // Replace the two variables below.
 int ip[] = {192,168,1,1};
-int port = 443;
+int port = 4444;
 
 // Use custom shellcode if set to true
 bool custom = false;
