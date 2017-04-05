@@ -5,7 +5,7 @@ int port = 4444;
 // Use custom shellcode if set to true
 bool custom = false;
 
-// Place custom shellcode here
+// Place custom shellcode here, if you set custom to true.
 String shellcode = "Place your custom shellcode here.";
 
 
@@ -22,7 +22,7 @@ void setup()
     delay(500);
     digitalWrite(ledPin, LOW);
     
-    //This evaluates our IP ansd port info, writing it to net_info for use
+    //This evaluates our IP and port info, writing it to net_info for use
     parseNet();
        
     // Wait for drivers to install.
