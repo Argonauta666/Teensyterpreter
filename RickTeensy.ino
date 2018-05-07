@@ -89,11 +89,23 @@ void spawnReverseTCP()                                             // Start the 
     Keyboard.send_now();
     clearKeys();
     
+    // Give run a second to appe
     delay(1000);
     
+    //Start an ultra small command prompt
+    Keyboard.print("cmd.exe /T:01 /K MODE CON: COLS=17 LINES=1");
+    Keyboard.set_key1(KEY_ENTER);
+    Keyboard.send_now();
+    clearKeys();
+    
+    // Give CMD some time to appear.
+    delay(3000);
+    
     returnCode(1, 100);                                            // Run is ready.
-    // this can be changed to anylink
-    Keyboard.print("iexplore.exe -k https://www.youtube.com/watch?v=oHg5SJYRHA0"); 
+    /* Should open default browser with rickroll link. 
+     * Sometimes Internet Explorer starts up with tons of messages about setting it to your default browser
+     * And cortana and stuff, so this ensures that it'll open in the user's preferred browser. */
+    Keyboard.print("start www.youtube.com/watch?v=oHg5SJYRHA0"); 
     Keyboard.set_key1(KEY_ENTER);
     Keyboard.send_now();
     clearKeys();                                      // All done.
