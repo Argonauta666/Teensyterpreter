@@ -68,10 +68,7 @@ void waitForDrivers()
         returnCode(1, 500);
         toggleCaps();
     }
-    // If caps lock still on, kill it
-    if (capsCheck()) {
-        toggleCaps();
-    }
+    toggleCaps();
 }
 
 // Check if Caps Lock is on.
@@ -128,7 +125,7 @@ void killCaps()
 {
     if (capsCheck())
     {
-        hitCaps();
+        toggleCaps();
     }
 }
 
